@@ -43,8 +43,7 @@ loadChildren: () => import('../films/films.module').then( m => m.FilmsPageModule
   path: ':id',
 loadChildren: () => import('../films-details/films-details.module').then( m => m.FilmsDetailsPageModule) 	
   }
-	]
-	},
+	],
 	{
   path: 'people',
 children: [
