@@ -7,24 +7,26 @@ const routes: Routes = [
   {
     path: 'tabs',
     component: TabsPage,
-    childtren:[
+children:[
       {
         path: 'films',
-        children: [
+  children: [
           {
-            path: ' ',
-            loadChildren: () => import('..films/films.module').then( m => m.FilmsPageModule)
+            path: '',
+  loadChildren: () => import('../films/films.module').then( m => m.FilmsPageModule)
           },
           {
             path: ':id',
-          loadChildren: () => import('../films-details/films-details.module').then( m => m.FilmDetailsPageModule)	
+  loadChildren: () => import('../films-details/films-details.module').then( m => m.FilmsDetailsPageModule)	
           }
         ]
       },
       {
         path: 'people',
-        children:[
-          path: ' ',
+  children:[
+          {
+            path: '',
+          }
         ]
       }
     ]
@@ -32,17 +34,24 @@ const routes: Routes = [
 ];
 
 path: 'films',
-children: [ 		{
-path: '',
-loadChildren: () => import('../films/films.module').then( m => m.FilmsPageModule)  },
+children: [ 		
+  {
+  path: '',
+loadChildren: () => import('../films/films.module').then( m => m.FilmsPageModule)  
+  },
 	{
-path: ':id',
-loadChildren: () => import('../film-details/film-details.module').then( m => m.FilmDetailsPageModule) 	}
+  path: ':id',
+loadChildren: () => import('../films-details/films-details.module').then( m => m.FilmsDetailsPageModule) 	
+  }
 	]
 	},
 	{
-path: 'people',
-children: [ 	{
+  path: 'people',
+children: [
+  {
+    
+  }
+]
 
 
 @NgModule({
